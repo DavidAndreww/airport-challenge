@@ -4,8 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import MoreIcon from '@material-ui/icons/MoreVert'
-import Icon from '@mdi/react'
-import { mdiChevronLeft } from '@mdi/js'
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
@@ -27,8 +26,8 @@ export default function Navigation () {
     <div>
       <AppBar position='static'>
         <Toolbar className={classes.toolbar}>
-          <IconButton>
-            <Icon path={mdiChevronLeft} color='white' size={1} />
+          <IconButton className={classes.iconButton}>
+            <ChevronLeftIcon />
           </IconButton>
           <Typography>Report</Typography>
           <IconButton className={classes.iconButton}>

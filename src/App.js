@@ -1,9 +1,13 @@
 import React from 'react'
 import Navigation from './components/Navigation'
+import Footer from './components/Footer'
 
-function App () {
+function App() {
   return (
-    <Navigation />
+    <div>
+      <Navigation />
+      <Footer />
+    </div>
   )
 }
 
