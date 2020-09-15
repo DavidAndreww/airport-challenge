@@ -9,9 +9,6 @@ import { mdiChevronLeft } from '@mdi/js'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '100%' // not working
-  },
   toolbar: {
     minHeight: 80,
     alignItems: 'flex-end',
@@ -27,10 +24,10 @@ const useStyles = makeStyles((theme) => ({
 export default function Navigation () {
   const classes = useStyles()
   return (
-    <div className={classes.root}>
+    <div>
       <AppBar position='static'>
         <Toolbar className={classes.toolbar}>
-          <IconButton className={classes.iconButton}>
+          <IconButton>
             <Icon path={mdiChevronLeft} color='white' size={1} />
           </IconButton>
           <Typography>Report</Typography>
