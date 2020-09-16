@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Box from '@material-ui/core/Box'
+import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import TextField from '@material-ui/core/TextField'
 import Select from '@material-ui/core/Select'
@@ -24,6 +25,16 @@ const useStyles = makeStyles((theme) => ({
   },
   inputLabel: {
     minWidth: 0
+  },
+  primaryButton: {
+    background: '#F67438',
+    color: 'white',
+    borderRadius: '25px'
+  },
+  secondaryButton: {
+    border: '1px solid #F67438',
+    color: '#F67438',
+    borderRadius: '25px'
   }
 }))
 
@@ -39,7 +50,7 @@ export default function ConcernEntrySection () {
       />
       <TextField
         className={classes.primaryConcern}
-        id='primary-concern-field'
+        id='concern-desc-field'
         defaultValue='Type description to help identify the problem'
       />
       <Box display='flex' justifyContent='space-between' alignItems='center'>
@@ -90,6 +101,8 @@ export default function ConcernEntrySection () {
           />
         </RadioGroup>
       </FormControl>
+      <Button variant='outlined' className={classes.secondaryButton}>Preview</Button>
+      <Button variant='contained' className={classes.primaryButton}>Publish</Button>
     </div>
   )
 }
