@@ -39,7 +39,7 @@ export default function Footer () {
               <Typography>Explore</Typography>
             </Box>
           </IconButton>
-          <IconButton className={classes.primaryButton}>
+          <IconButton onClick={() => console.log('clicked')} className={classes.primaryButton}>
             <Box>
               <AddCircleIcon />
               <Typography>Create</Typography>
