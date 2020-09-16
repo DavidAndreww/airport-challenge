@@ -1,13 +1,14 @@
 import React from 'react'
 import NavigationView from './components/navigation/NavigationView'
-import ConcernEntrySectionContainer from './containers/ConcernEntrySectionContainer'
 import Footer from './components/footer/FooterView'
 
 function App () {
   return (
     <div>
       <NavigationView />
-      <ConcernEntrySectionContainer />
+      <div>
+        All of the form fields will be rendered here.
+      </div>
       <Footer />
     </div>
   )
