@@ -1,12 +1,12 @@
 import React from 'react'
-import Navigation from './components/Navigation'
+import NavigationView from './components/navigation/NavigationView'
 import ConcernEntrySectionContainer from './containers/ConcernEntrySectionContainer'
-import Footer from './components/Footer'
+import Footer from './components/footer/FooterView'
 
 function App () {
   return (
     <div>
-      <Navigation />
+      <NavigationView />
       <ConcernEntrySectionContainer />
       <Footer />
     </div>

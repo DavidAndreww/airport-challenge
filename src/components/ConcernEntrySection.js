@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default function ConcernEntrySection () {
+export default function ConcernEntrySection ({ form }) {
   const classes = useStyles()
 
   return (
@@ -56,7 +56,7 @@ export default function ConcernEntrySection () {
       <Box display='flex' justifyContent='space-between' alignItems='center'>
         <Box display='flex'>
           <RoomIcon className={classes.icon} />
-          <Typography>Gate 2</Typography>
+          <Typography>{form.location}</Typography>
         </Box>
         <FormControl>
           <InputLabel className={classes.inputLabel}>
