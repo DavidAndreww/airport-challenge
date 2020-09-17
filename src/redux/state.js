@@ -1,10 +1,11 @@
 const state = {
   concern: '',
   concernDesc: '',
-  location: '',
+  location: 'gate_1',
   photo: '',
   category: '',
-  privacy: ''
+  privacy: '',
+  formOpen: false
 }
 
 export default state

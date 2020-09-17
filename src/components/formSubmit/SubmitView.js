@@ -15,7 +15,7 @@ const useStyles = makeStyles({
   }
 })
 
-export default function FormSubmitview ({ handleSubmit, togglePreview }) {
+export default function Submitview ({ handleSubmit, togglePreview }) {
   const classes = useStyles()
   return (
     <div style={{ display: 'flex', justifyContent: 'space-around', width: '50%', margin: '0 auto' }}>

@@ -1,5 +1,5 @@
 import React from 'react'
-import ConcernFormView from './ConcernFormView'
+import ConcernView from './ConcernView'
 import { useDispatch, useSelector } from 'react-redux'
 import { updateConcern, updateConcernDesc } from '../../redux/actions'
 
@@ -14,5 +14,5 @@ export default function ConcernFormModel () {
     if (field === 'concern') dispatch(updateConcern(value))
     else dispatch(updateConcernDesc(value))
   }
-  return <ConcernFormView concern={concern} concernDesc={concernDesc} handleChange={handleChange} />
+  return <ConcernView concern={concern} concernDesc={concernDesc} handleChange={handleChange} />
 }
