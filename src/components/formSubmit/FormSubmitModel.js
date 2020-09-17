@@ -5,12 +5,12 @@ import { useSelector } from 'react-redux'
 export default function FormSubmitModel () {
   const state = useSelector((state) => state)
 
-  const handleSubmit = async () => {
-    console.log('STATE -> ', state)
+  const handleSubmit = () => {
+    console.log('Fetch is not working!?')
   }
 
   const togglePreview = () => {
-    console.log('preview button')
+    console.log('togglePreview')
   }
 
   return <FormSubmitview togglePreview={togglePreview} handleSubmit={handleSubmit} />
