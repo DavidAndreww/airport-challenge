@@ -6,11 +6,19 @@ import { useSelector } from 'react-redux'
 export default function FormSubmitModel () {
   const state = useSelector((state) => state)
 
-  const applyTimeStamp = () => new Date()
-  const handleSubmit = () => {
-    state.timeOfConcern = applyTimeStamp().toString()
+  const applyTimeStamp = () => new Date().toString()
+
+  const handleSubmit = async () => {
+    state.timeOfConcern = applyTimeStamp()
+    delete state.isFormOpen
     console.log('STATE -> ', state)
-    fetch()
+    // const response = await fetch('https://localhost:5000/', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({
+    //     concern: state
+    //   })
+    // })
   }
 
   const togglePreview = () => {

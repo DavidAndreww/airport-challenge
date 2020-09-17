@@ -1,6 +1,7 @@
 import React from 'react'
 import ConcernModel from './concernForm/ConcernModel'
 import LocationModel from './locationForm/LocationModel'
+import PhotoModel from './photoForm/PhotoModel'
 import CategoryModel from './categoryForm/CategoryModel'
 import PrivacyModel from './privacyForm/PrivacyModel'
 import SubmitModel from './formSubmit/SubmitModel'
@@ -15,6 +16,7 @@ export default function DisplayField () {
       <div>
         <ConcernModel />
         <LocationModel />
+        <PhotoModel />
         <CategoryModel />
         <PrivacyModel />
         <SubmitModel />
