@@ -71,21 +71,6 @@ export default function ConcernEntrySection ({ form }) {
         </FormControl>
       </Box>
       <InputBase type='file' />
-      <Typography variant='h4'>Additional Information</Typography>
-      <Box>
-        <FormControl>
-          <InputLabel>
-            <Typography variant='h6'>CATEGORY</Typography>
-          </InputLabel>
-          <Select>
-            <MenuItem>Bathroom</MenuItem>
-            <MenuItem>Displays</MenuItem>
-            <MenuItem>Trash Can</MenuItem>
-            <MenuItem>Boarding Gate</MenuItem>
-            <MenuItem>Baggage Carousels</MenuItem>
-          </Select>
-        </FormControl>
-      </Box>
       <FormControl>
         <FormLabel>Select privacy of your report</FormLabel>
         <RadioGroup>

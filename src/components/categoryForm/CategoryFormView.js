@@ -9,7 +9,7 @@ export default function CategoryFormModel ({ value, handleChange }) {
   return (
     <div>
       <Typography variant='h4'>Additional Information</Typography>
-      <Typography variant='h6'>Category</Typography>
+      <Typography variant='h6'>Category:</Typography>
       <FormControl style={{ minWidth: 250 }}>
         <InputLabel htmlFor='category'>Select from Dropdown</InputLabel>
         <Select id='category' value={value} onChange={handleChange}>

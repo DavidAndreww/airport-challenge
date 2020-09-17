@@ -3,7 +3,7 @@ const state = {
   concernDesc: '',
   location: '',
   photo: '',
-  category: 'AIRPLANE',
+  category: '',
   privacy: ''
 }
 

@@ -1,19 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import CategoryFormView from './CategoryFormView'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { updateCategory } from '../../redux/actions'
 
 export default function CategoryFormModel () {
-  const [category, setCategory] = useState('')
   const dispatch = useDispatch()
+  const category = useSelector((state) => state.category)
 
   const handleChange = (e) => {
-    setCategory(e.target.value)
+    dispatch(updateCategory(e.target.value))
   }
-
-  useEffect(() => {
-    dispatch(updateCategory(category))
-  })
 
   return <CategoryFormView value={category} handleChange={handleChange} />
 }
