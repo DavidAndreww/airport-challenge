@@ -5,10 +5,7 @@ import Typography from '@material-ui/core/Typography'
 import TextField from '@material-ui/core/TextField'
 import Select from '@material-ui/core/Select'
 import FormControl from '@material-ui/core/FormControl'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
-import Radio from '@material-ui/core/Radio'
-import RadioGroup from '@material-ui/core/RadioGroup'
-import FormLabel from '@material-ui/core/FormLabel'
+
 import InputLabel from '@material-ui/core/InputLabel'
 import InputBase from '@material-ui/core/InputBase'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -71,21 +68,7 @@ export default function ConcernEntrySection ({ form }) {
         </FormControl>
       </Box>
       <InputBase type='file' />
-      <FormControl>
-        <FormLabel>Select privacy of your report</FormLabel>
-        <RadioGroup>
-          <FormControlLabel
-            value='anonymous'
-            control={<Radio />}
-            label='Anonymous'
-          />
-          <FormControlLabel
-            value='private'
-            control={<Radio />}
-            label='Private'
-          />
-        </RadioGroup>
-      </FormControl>
+      \
       <Button variant='outlined' className={classes.secondaryButton}>Preview</Button>
       <Button variant='contained' className={classes.primaryButton}>Publish</Button>
     </div>

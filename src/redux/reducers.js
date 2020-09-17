@@ -49,4 +49,15 @@ const privacy = (state = null, action) => {
   }
 }
 
-export default combineReducers({ concern, concernDesc, location, photo, category, privacy })
+const isFormOpen = (state = null, action) => {
+  switch (action.type) {
+    case 'TOGGLE_TRUE':
+      return true
+    case 'TOGGLE_FALSE':
+      return false
+    default:
+      return state
+  }
+}
+
+export default combineReducers({ concern, concernDesc, location, photo, category, privacy, isFormOpen })

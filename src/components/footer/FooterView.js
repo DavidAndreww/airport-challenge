@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default function Footer () {
+export default function Footer ({ handleClick }) {
   const classes = useStyles()
 
   return (
@@ -39,13 +39,13 @@ export default function Footer () {
               <Typography>Explore</Typography>
             </Box>
           </IconButton>
-          <IconButton onClick={() => console.log('clicked')} className={classes.primaryButton}>
+          <IconButton id='create' onClick={handleClick} className={classes.primaryButton}>
             <Box>
               <AddCircleIcon />
               <Typography>Create</Typography>
             </Box>
           </IconButton>
-          <IconButton className={classes.secondaryButton}>
+          <IconButton id='profile' onClick={handleClick} className={classes.secondaryButton}>
             <Box>
               <PersonIcon />
               <Typography>Profile</Typography>

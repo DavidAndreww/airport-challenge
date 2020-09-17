@@ -5,7 +5,7 @@ const state = {
   photo: '',
   category: '',
   privacy: '',
-  formOpen: false
+  isFormOpen: false
 }
 
 export default state

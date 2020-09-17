@@ -39,3 +39,17 @@ export const updatePrivacy = (privacy) => {
     value: privacy
   }
 }
+
+export const toggleFormOpen = () => {
+  return {
+    type: 'TOGGLE_TRUE',
+    value: null
+  }
+}
+
+export const toggleFormClosed = () => {
+  return {
+    type: 'TOGGLE_FALSE',
+    value: null
+  }
+}
