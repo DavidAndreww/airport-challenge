@@ -11,7 +11,7 @@ export default function PhotoModel () {
     const file = e.target.files[0]
     const reader = new FileReader()
     reader.onload = (e) => {
-      dispatch(updatePhoto({ src: e.target.result, file: file })) // <img src={src} file={file} />
+      dispatch(updatePhoto(e.target.result)) // <img src={src}/>
     }
     reader.readAsDataURL(file)
   }
