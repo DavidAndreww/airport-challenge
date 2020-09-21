@@ -3,7 +3,6 @@ const fs = require('fs')
 function doesFileExist (path) {
   try {
     fs.accessSync(path, fs.constants.F_OK)
-    console.log('file exists')
     return true
   } catch (err) {
     console.error(err)
@@ -13,6 +12,7 @@ function doesFileExist (path) {
 
 module.exports = function postData (req, res) {
   const json = req.body
+  console.log(json)
   const path = './server/data/data.json'
 
   if (doesFileExist(path)) {

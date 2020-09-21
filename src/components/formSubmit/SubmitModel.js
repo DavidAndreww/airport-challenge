@@ -12,13 +12,13 @@ export default function FormSubmitModel () {
     state.timeOfConcern = applyTimeStamp()
     delete state.isFormOpen
     console.log('STATE -> ', state)
-    // const response = await fetch('https://localhost:5000/', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({
-    //     concern: state
-    //   })
-    // })
+    const response = await fetch('http://localhost:5000/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        concern: state
+      })
+    })
   }
 
   const togglePreview = () => {
