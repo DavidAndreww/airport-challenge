@@ -12,7 +12,6 @@ function doesFileExist (path) {
 
 module.exports = function postData (req, res) {
   const json = req.body
-  console.log(json)
   const path = './server/data/data.json'
 
   if (doesFileExist(path)) {
