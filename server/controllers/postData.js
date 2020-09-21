@@ -23,7 +23,6 @@ module.exports = function postData (req, res) {
 
       fs.writeFile(path, JSON.stringify(arrOfData), 'utf8', function (err) {
         if (err) throw err
-        console.log('Done!')
         res.json({ new_entry: json })
       })
     })
