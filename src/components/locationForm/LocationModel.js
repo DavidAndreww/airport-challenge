@@ -9,7 +9,6 @@ export default function LocationModel () {
 
   const handleChange = (e) => {
     dispatch(updateLocation(e.target.value))
-    console.log('GATE # => ', typeof e.target.value)
   }
 
   return <LocationView value={location} handleChange={handleChange} />
