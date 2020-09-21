@@ -1,18 +1,37 @@
 const fs = require('fs')
 
+function doesFileExist (path) {
+  try {
+    fs.accessSync(path, fs.constants.F_OK)
+    console.log('file exists')
+    return true
+  } catch (err) {
+    console.error(err)
+    return false
+  }
+}
+
 module.exports = function postData (req, res) {
   const json = req.body
-  const jsonFile = '../isys-airport-app/server/data/data.json'
+  const path = './server/data/data.json'
 
-  fs.readFile(jsonFile, 'utf8', function (err, data) {
-    if (err) throw err
-    const arrOfData = JSON.parse(data)
-    arrOfData.data.push(json)
-
-    fs.writeFile(jsonFile, JSON.stringify(arrOfData), 'utf8', function (err) {
+  if (doesFileExist(path)) {
+    fs.readFile(path, 'utf8', function (err, data) {
       if (err) throw err
-      console.log('Done!')
-      res.json({ json: json })
+      const arrOfData = JSON.parse(data)
+      arrOfData.data.push(json)
+
+      fs.writeFile(path, JSON.stringify(arrOfData), 'utf8', function (err) {
+        if (err) throw err
+        console.log('Done!')
+        res.json({ new_entry: json })
+      })
     })
-  })
+  } else {
+    const jsonStarterData = { data: [] }
+    fs.writeFile(path, JSON.stringify(jsonStarterData), 'utf8', (err) => {
+      if (err) throw err
+      postData(req, res)
+    })
+  }
 }
