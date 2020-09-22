@@ -1,10 +1,7 @@
 import React from 'react'
 import Button from '@material-ui/core/Button'
-import Dialog from '@material-ui/core/Dialog'
-import Typography from '@material-ui/core/Typography'
-import { useSelector } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles'
-import { getNum } from '../../utilityFunctions'
+import DataModel from '../dataContainer/DataModel'
 
 const useStyles = makeStyles({
   primaryButton: {
@@ -26,10 +23,10 @@ const useStyles = makeStyles({
 export default function Submitview ({
   isPreviewOpen,
   handleSubmit,
-  togglePreview
+  togglePreview,
+  state
 }) {
   const classes = useStyles()
-  const state = useSelector((state) => state)
 
   return (
     <div
@@ -54,20 +51,11 @@ export default function Submitview ({
       >
         Publish
       </Button>
-      <Dialog className={classes.dialog} open={isPreviewOpen}>
-        <Typography variant='h6'>
-          Concern:
-          <Typography>{state.concern}:{state.concernDesc}</Typography>
-        </Typography>
-        <Typography variant='h6'>
-          Location:
-          <Typography>Gate #{getNum(state.location)}</Typography>
-        </Typography>
-        <img src={state.photo} alt='Image of concern' style={{ width: '200px', height: '200px' }} />
-        <Button className={classes.primaryButton} onClick={togglePreview}>
-          Back
-        </Button>
-      </Dialog>
+      <DataModel
+        state={state}
+        handleCallBack={togglePreview}
+        open={isPreviewOpen}
+      />
     </div>
   )
 }
