@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default function Navigation () {
+export default function Navigation ({ toggleAdminView }) {
   const classes = useStyles()
   return (
     <div>
@@ -30,7 +30,7 @@ export default function Navigation () {
             <ChevronLeftIcon />
           </IconButton>
           <Typography>Report</Typography>
-          <IconButton className={classes.iconButton}>
+          <IconButton onClick={toggleAdminView} className={classes.iconButton}>
             <MoreIcon />
           </IconButton>
         </Toolbar>

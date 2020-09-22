@@ -6,13 +6,9 @@ import InputLabel from '@material-ui/core/InputLabel'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 import RoomIcon from '@material-ui/icons/Room'
+import { getNum } from '../../utilityFunctions'
 
 export default function LocationView ({ value, handleChange }) {
-  const getNum = (string) => {
-    const regex = /\d+/g
-    return string.match(regex)
-  }
-
   return (
     <div style={{ width: '100%' }}>
       <Box display='flex' justifyContent='space-between' alignItems='center'>
