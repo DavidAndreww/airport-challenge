@@ -32,14 +32,57 @@ const useStyles = makeStyles({
   }
 })
 
-// required props:
-// state -> used to render data
+// props:
+// open - determines if dialog is open/closed, takes truthy falsy value
+// state (required) -> used to render data
 // admin -> if true, adds time of concern field, else renders back button
 // handleCallBack -> required if admin is false: function to toggle true/false value to open/close dialog
 export default function DataModel (props) {
   const classes = useStyles()
-  return (
-    <Dialog open={props.open}>
+  if (!props.admin) {
+    return (
+      <Dialog open={props.open}>
+        <div className={classes.dialogWrapper}>
+          <div className={classes.wrapper}>
+            <img
+              src={props.state.photo}
+              alt='Image of concern'
+              className={classes.img}
+            />
+          </div>
+          <div>
+            <Typography variant='h6'>
+              Concern:{' '}
+              <span className={classes.spanText}>
+                <strong>{props.state.concern}:</strong>{' '}
+                {props.state.concernDesc}
+              </span>
+            </Typography>
+            <Typography variant='h6'>
+              Location:{' '}
+              <span className={classes.spanText}>
+                Gate #{getNum(props.state.location)}
+              </span>
+            </Typography>
+            <Typography variant='h6'>
+              Category:{' '}
+              <span className={classes.spanText}>{props.state.category}</span>
+            </Typography>
+            <Typography variant='h6'>
+              Privacy:{' '}
+              <span className={classes.spanText}>{props.state.privacy}</span>
+            </Typography>
+            <div className={classes.wrapper}>
+              <Button className={classes.button} onClick={props.handleCallBack}>
+                Back
+              </Button>
+            </div>
+          </div>
+        </div>
+      </Dialog>
+    )
+  } else if (props.admin) {
+    return (
       <div className={classes.dialogWrapper}>
         <div className={classes.wrapper}>
           <img
@@ -50,25 +93,33 @@ export default function DataModel (props) {
         </div>
         <div>
           <Typography variant='h6'>
-            Concern: <span className={classes.spanText}><strong>{props.state.concern}:</strong> {props.state.concernDesc}</span>
+            Concern:{' '}
+            <span className={classes.spanText}>
+              <strong>{props.state.concern}:</strong> {props.state.concernDesc}
+            </span>
           </Typography>
           <Typography variant='h6'>
-            Location: <span className={classes.spanText}>Gate #{getNum(props.state.location)}</span>
+            Location:{' '}
+            <span className={classes.spanText}>
+              Gate #{getNum(props.state.location)}
+            </span>
           </Typography>
           <Typography variant='h6'>
-            Category: <span className={classes.spanText}>{props.state.category}</span>
+            Category:{' '}
+            <span className={classes.spanText}>{props.state.category}</span>
           </Typography>
           <Typography variant='h6'>
-            Privacy: <span className={classes.spanText}>{props.state.privacy}</span>
+            Privacy:{' '}
+            <span className={classes.spanText}>{props.state.privacy}</span>
           </Typography>
-          {props.admin && (
-            <Typography variant='h6'>
-              TimeStamp: <span className={classes.spanText}>{props.state.timeOfconcern}</span>
-            </Typography>
-          )}
-          {!props.admin && <div className={classes.wrapper}><Button className={classes.button} onClick={props.handleCallBack}>Back</Button></div>}
+          <Typography variant='h6'>
+            TimeStamp:{' '}
+            <span className={classes.spanText}>
+              {props.state.timeOfConcern}
+            </span>
+          </Typography>
         </div>
       </div>
-    </Dialog>
-  )
+    )
+  }
 }

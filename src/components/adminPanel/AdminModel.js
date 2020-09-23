@@ -11,12 +11,13 @@ export default function AdminModel () {
       headers: { 'Content-Type': 'application/json' }
     })
     const json = await response.json()
-    console.log(json)
-    setJsonArray(json)
+    const arrayOfConcerns = json.data.data
+    console.log(arrayOfConcerns)
+    setJsonArray(arrayOfConcerns)
   }
 
   useEffect(() => {
-    console.log('page loaded')
-  })
-  return <AdminView jsonArray={jsonArray}/>
+    fetchData()
+  }, [])
+  return <AdminView jsonArray={jsonArray} />
 }
