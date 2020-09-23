@@ -2,11 +2,15 @@ import React, { useState } from 'react'
 import NavigationView from './NavigationView'
 
 export default function NavigationModel () {
-  const [adminView, setAdminView] = useState(false)
+  const [adminView, setAdminView] = useState(true)
 
   const toggleAdminView = () => {
-    !adminView && setAdminView(true)
+    if (adminView === false) {
+      setAdminView(true)
+    } else {
+      setAdminView(false)
+    }
   }
 
-  return <NavigationView toggleAdminView={toggleAdminView} />
+  return <NavigationView adminView={adminView} toggleAdminView={toggleAdminView} />
 }

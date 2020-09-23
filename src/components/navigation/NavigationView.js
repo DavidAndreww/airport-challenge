@@ -6,6 +6,7 @@ import IconButton from '@material-ui/core/IconButton'
 import MoreIcon from '@material-ui/icons/MoreVert'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import { makeStyles } from '@material-ui/core/styles'
+import { Link } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default function Navigation ({ toggleAdminView }) {
+export default function Navigation ({ adminView, toggleAdminView }) {
   const classes = useStyles()
   return (
     <div>
@@ -30,9 +31,11 @@ export default function Navigation ({ toggleAdminView }) {
             <ChevronLeftIcon />
           </IconButton>
           <Typography>Report</Typography>
-          <IconButton onClick={toggleAdminView} className={classes.iconButton}>
-            <MoreIcon />
-          </IconButton>
+          <Link onClick={toggleAdminView} to={adminView ? '/admin' : '/'}>
+            <IconButton className={classes.iconButton}>
+              <MoreIcon />
+            </IconButton>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>

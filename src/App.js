@@ -9,11 +9,11 @@ function App () {
   return (
     <div className='form' style={{ maxWidth: '550px', margin: '0 auto' }}>
       <Provider store={store}>
-        <NavigationModel />
         <BrowserRouter>
+          <NavigationModel />
           <Router />
+          <FooterModel />
         </BrowserRouter>
-        <FooterModel />
       </Provider>
     </div>
   )
