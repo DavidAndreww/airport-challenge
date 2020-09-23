@@ -18,5 +18,5 @@ export default function AdminModel () {
   useEffect(() => {
     console.log('page loaded')
   })
-  return <AdminView />
+  return <AdminView jsonArray={jsonArray}/>
 }
