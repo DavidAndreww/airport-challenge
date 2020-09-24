@@ -22,7 +22,6 @@ const useStyles = makeStyles({
 
 export default function Submitview ({
   isPreviewOpen,
-  handleSubmit,
   togglePreview,
   state
 }) {
@@ -45,7 +44,7 @@ export default function Submitview ({
         Preview
       </Button>
       <Button
-        onClick={handleSubmit}
+        type='submit'
         variant='contained'
         className={classes.primaryButton}
       >
