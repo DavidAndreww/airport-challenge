@@ -8,7 +8,9 @@ import { makeStyles } from '@material-ui/core/styles'
 const useStyles = makeStyles({
   dialogWrapper: {
     width: '300px',
-    padding: '5px'
+    padding: '5px',
+    margin: '5px',
+    border: '1px solid #F67438'
   },
   wrapper: {
     width: '100%',
