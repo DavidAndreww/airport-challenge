@@ -1,5 +1,5 @@
 import React from 'react'
-import DataModel from '../dataContainer/DataModel'
+import DataModel from '../jsonDataDisplay/DataModel'
 
 export default function AdminView ({ jsonArray }) {
   console.log(jsonArray)
